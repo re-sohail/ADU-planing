@@ -53,6 +53,19 @@ Production needs every key.
 | `npm start` | Serve the production build |
 | `npm run lint` | ESLint |
 | `npm test` | Unit tests for placement geometry and lead validation |
+| `npm run test:hydration` | Rebuild the app and check every page for hydration mismatches in a real browser |
+| `npm run dev:hydration` | Browse the app with a live hydration overlay |
+
+## Hydration checks
+
+Two tools from [hydration-proof](https://hydration.jscrate.dev) keep server and browser output in sync:
+
+- **ESLint rules** (`eslint-plugin-hydration-proof`, Next.js preset) run with `npm run lint` and flag render code such as `Date.now()`, `window`, storage reads and invalid HTML nesting.
+- **Browser check** (`hydration-proof`) runs with `npm run test:hydration`. The first time, download its browser with `npx hydration-proof install`.
+
+`hydration-proof.config.mjs` tests each page the way visitors reach it: the planner as a new visitor, the details page after planning an ADU, and the confirmation after booking. Reports are written to `.hydration-proof/report/`.
+
+`suppressHydrationWarning` on `<html>` and `<body>` hides attributes that browser extensions (password managers, antivirus) inject before React loads. Extensions that also change inner elements can still log a warning in development; it does not affect visitors.
 
 ## Limitations
 

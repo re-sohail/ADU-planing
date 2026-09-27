@@ -11,9 +11,10 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // Browser extensions such as password managers and antivirus add attributes to html and body before React hydrates.
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="font-sans">
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body className="font-sans" suppressHydrationWarning>
         <PlannerProvider>
           {children}
           <Toaster position="bottom-right" />
