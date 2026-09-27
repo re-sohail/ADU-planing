@@ -19,8 +19,8 @@ export function SuccessStep() {
       </span>
       <h1 className="text-2xl font-semibold text-ink">Your consultation is booked</h1>
       <p className="text-sm text-muted">
-        We sent a confirmation to your email. Our team will contact you before the appointment to review your lot
-        and ADU placement.
+        Thanks for reaching out. Our team will contact you before the appointment to review your lot and ADU
+        placement.
       </p>
       <Link href="/adus" onClick={reset} className={buttonStyles({ variant: "secondary", className: "mt-2" })}>
         Plan another property

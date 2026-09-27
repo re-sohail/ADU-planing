@@ -1,6 +1,4 @@
-import { getAduById } from "@/data/aduCatalog";
 import { fieldErrors, leadSchema } from "@/lib/leadSchema";
-import { sendLeadEmails } from "@/lib/mailer";
 import { prisma } from "@/lib/prisma";
 
 export async function POST(request) {
@@ -40,12 +38,6 @@ export async function POST(request) {
   } catch (error) {
     console.error("Failed to save lead", error);
     return Response.json({ error: "We could not save your request. Please try again." }, { status: 500 });
-  }
-
-  try {
-    await sendLeadEmails(lead, getAduById(aduId));
-  } catch (error) {
-    console.error("Lead saved but emails failed", error);
   }
 
   return Response.json({ ok: true }, { status: 201 });

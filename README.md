@@ -10,7 +10,7 @@ Homeowners search their address, see their lot on satellite imagery, place a tru
    - **Fits.** Fully inside the lot and at least 4 ft from every lot line.
    - **Too close.** Inside the lot but within the 4 ft setback.
    - **Outside.** Crosses the lot line.
-4. **Booking.** `/api/leads` validates the request, saves it to Postgres and emails the customer and the team.
+4. **Booking.** `/api/leads` validates the request and saves it to Postgres.
 
 ADU models live in `src/data/aduCatalog.js`, with floor plan drawings in `public/plans`.
 
@@ -35,9 +35,6 @@ Open http://localhost:3000.
 | `REGRID_TOKEN` | Parcel boundaries (server only) |
 | `NEXT_PUBLIC_MAPBOX_TOKEN` | Satellite map tiles. Restrict the token to your domain. |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Address search. Enable Maps JavaScript API and Places API (New), and restrict by HTTP referrer. |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | Outgoing email |
-| `MAIL_FROM` | Sender address for emails |
-| `LEAD_NOTIFY_EMAIL` | Team inbox that receives new leads |
 
 In development you can run the planner without keys:
 - Without `REGRID_TOKEN`, a demo lot is drawn at the searched point.
