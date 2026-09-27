@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="none" font-family="Arial, sans-serif" font-size="12" fill="#475569" text-anchor="middle">
+  <rect x="3" y="3" width="194" height="194" fill="#f8fafc" stroke="#1f2937" stroke-width="6"/>
+  <rect x="12" y="170" width="96" height="20" fill="#e2e8f0"/>
+  <path d="M120 130 V197 M120 130 H197" stroke="#1f2937" stroke-width="3" fill="none"/>
+  <rect x="80" y="0" width="30" height="6" fill="#f8fafc"/>
+  <path d="M80 6 A30 30 0 0 0 110 36" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+  <text x="70" y="90">Living</text>
+  <text x="60" y="162">Kitchen</text>
+  <text x="158" y="168">Bath</text>
+</svg>

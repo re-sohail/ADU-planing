@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 200" preserveAspectRatio="none" font-family="Arial, sans-serif" font-size="12" fill="#475569" text-anchor="middle">
+  <rect x="3" y="3" width="494" height="194" fill="#f8fafc" stroke="#1f2937" stroke-width="6"/>
+  <rect x="210" y="170" width="130" height="20" fill="#e2e8f0"/>
+  <path d="M140 3 V197 M140 125 H200 M200 125 V197 M360 3 V197 M360 125 H420 M420 125 V197" stroke="#1f2937" stroke-width="3" fill="none"/>
+  <rect x="230" y="0" width="30" height="6" fill="#f8fafc"/>
+  <path d="M230 6 A30 30 0 0 0 260 36" stroke="#94a3b8" stroke-width="1.5" fill="none"/>
+  <text x="72" y="104">Bedroom</text>
+  <text x="170" y="165">Bath</text>
+  <text x="275" y="90">Living</text>
+  <text x="275" y="162">Kitchen</text>
+  <text x="390" y="165">Bath</text>
+  <text x="430" y="68">Bedroom</text>
+</svg>

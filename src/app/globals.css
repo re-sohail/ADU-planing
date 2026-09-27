@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-surface: #f8fafc;
+  --color-brand: #0f172a;
+  --color-brand-hover: #1e293b;
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-danger: #dc2626;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-ink antialiased;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+.map-handle {
+  @apply size-4 rounded-full border-2 border-white bg-brand shadow-md;
+}
+
+.map-handle-rotate {
+  @apply bg-white border-brand;
+  cursor: grab;
+}
+
+.map-handle-move {
+  cursor: move;
+}
+
+.footprint-label {
+  @apply rounded-md bg-ink/80 px-2 py-0.5 text-xs font-medium whitespace-nowrap text-white shadow-none border-0;
+}
+
+.footprint-label::before {
+  display: none;
+}
