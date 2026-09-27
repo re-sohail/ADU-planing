@@ -31,7 +31,8 @@ Open http://localhost:3000.
 
 | Key | Used for |
 | --- | --- |
-| `DATABASE_URL` | Postgres connection for saving leads |
+| `DATABASE_URL` | Postgres connection for saving leads (Neon pooled URL) |
+| `DIRECT_URL` | Direct Postgres connection used by Prisma migrations (Neon URL without `-pooler`) |
 | `REGRID_TOKEN` | Parcel boundaries (server only) |
 | `NEXT_PUBLIC_MAPBOX_TOKEN` | Satellite map tiles. Restrict the token to your domain. |
 | `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` | Address search. Enable Maps JavaScript API and Places API (New), and restrict by HTTP referrer. |
