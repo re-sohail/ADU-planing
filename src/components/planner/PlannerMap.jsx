@@ -13,19 +13,19 @@ import { ParcelLayers } from "./ParcelLayers";
 import { PlacementStatus } from "./PlacementStatus";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+const MAX_ZOOM = 21;
+const IMAGERY_MAX_ZOOM = 19;
 
 const TILES = MAPBOX_TOKEN
   ? {
       url: `https://api.mapbox.com/styles/v1/mapbox/satellite-v9/tiles/512/{z}/{x}/{y}@2x?access_token=${MAPBOX_TOKEN}`,
       tileSize: 512,
       zoomOffset: -1,
-      maxNativeZoom: 22,
     }
   : {
       url: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
       tileSize: 256,
       zoomOffset: 0,
-      maxNativeZoom: 19,
     };
 
 export default function PlannerMap({ parcel, adu, placement, onCommit }) {
@@ -71,12 +71,21 @@ export default function PlannerMap({ parcel, adu, placement, onCommit }) {
         ref={setMap}
         center={initialCenter}
         zoom={19}
-        maxZoom={22}
+        maxZoom={MAX_ZOOM}
+        zoomSnap={0.25}
+        zoomDelta={0.5}
+        wheelPxPerZoomLevel={120}
         zoomControl={false}
         attributionControl={false}
         className="h-full w-full"
       >
-        <TileLayer {...TILES} maxZoom={22} />
+        <TileLayer
+          {...TILES}
+          maxZoom={MAX_ZOOM}
+          maxNativeZoom={IMAGERY_MAX_ZOOM}
+          keepBuffer={4}
+          updateWhenZooming={false}
+        />
         <ParcelLayers geometry={geometry} buildable={buildable} />
         {adu && livePlacement && (
           <AduFootprint
